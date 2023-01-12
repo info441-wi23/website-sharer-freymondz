@@ -21,7 +21,7 @@ app.use(express.static(join(__dirname, 'public')));
 
 app.use('/api/v1', apiv1);
 
-app.listen(3000, 'localhost', () => {
+app.listen(3001, 'localhost', () => {
     console.log('Server is running on port 3000');
 });
 
