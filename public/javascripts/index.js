@@ -1,12 +1,17 @@
 
 async function previewUrl(){
-    let url = document.getElementById("urlInput").value;
-    
-    let preview = "TODO: Fetch the url preview from your API"
-    
-    displayPreviews(preview)
+    const url = document.getElementById("urlInput").value;
+    try {
+        const preview = await fetch(`api/v1/urls/preview?url=${url}`);
+        displayPreviews(await preview.text());
+    } catch (error) {
+        displayPreviews(error);
+    }
 }
 
+/**
+ * @param {string} previewHTML
+ */
 function displayPreviews(previewHTML){
     document.getElementById("url_previews").innerHTML = previewHTML;
 }
