@@ -1,6 +1,5 @@
 # website-sharer
-
-[![Deploy to Cyclic](https://deploy.cyclic.sh/button.svg)](https://deploy.cyclic.sh/)
+https://website-sharer.fly.dev/
 
 ## Information
 

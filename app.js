@@ -21,8 +21,8 @@ app.use(express.static(join(__dirname, 'public')));
 
 app.use('/api/v1', apiv1);
 
-app.listen(3001, 'localhost', () => {
-    console.log('Server is running on port 3000');
+app.listen(8081, "0.0.0.0" ,() => {
+    console.log('Server is running on port 8081');
 });
 
 export default app;
