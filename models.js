@@ -10,6 +10,7 @@ const postSchema = new mongoose.Schema({
     url: String,
     description: String,
     created_date: Date,
+    username: String,
 });
 
 models.post = mongoose.model('post', postSchema);

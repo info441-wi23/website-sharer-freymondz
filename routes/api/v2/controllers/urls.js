@@ -11,12 +11,11 @@ router.get('/preview', async (req, res) => {
             res.status(400).json({ message: 'Missing URL' });
             return;
         }
-        const preview = getURLPreview(url);
-    
+        const preview = await getURLPreview(url);
         res.type("html");
         res.send(preview);
     } catch (error) {
-        res.status(500).json({ error });
+        res.status(400).json({ error });
     }
 });
 

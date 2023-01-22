@@ -7,8 +7,7 @@ import getURLPreview from '../utils/urlPreviews.js';
 router.post('/', (req, res) => {
     try {
         const post = {
-            url: req.body.url,
-            description: req.body.description,
+            ...req.body,
             created_date: new Date(),
         };
         req.models.post.create(post);
@@ -30,6 +29,7 @@ router.get('/', async (req, res) => {
                     const preview = await getURLPreview(post.url);
                     return {
                         description: post.description,
+                        username: post.username,
                         htmlPreview: preview,
                     };
                 } catch (error) {
