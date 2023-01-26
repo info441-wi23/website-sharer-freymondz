@@ -1,6 +1,6 @@
-# fly.toml file generated for website-sharer on 2023-01-12T11:28:02-08:00
+# fly.toml file generated for website-sharer-db on 2023-01-26T10:44:05-08:00
 
-app = "website-sharer"
+app = "website-sharer-db"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
