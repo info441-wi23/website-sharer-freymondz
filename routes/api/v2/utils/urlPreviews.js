@@ -22,16 +22,25 @@ async function getURLPreview(url) {
         const attributes = element.rawAttributes;
         ogTag[attributes.property] = attributes.content;
     }
+    
+    const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
+    tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+    }[tag]));
 
     return `    
         <div class="card">
-            <a href="${ogTag['og:url']}">
-                <p><strong>${ogTag['og:title']}</strong></p>
-                ${ogTag['og:image'] !== '' ? `<img src="${ogTag['og:image']}" style="max-height: 200px; max-width: 270px;"/>` : ''}
+            <a href="${escapeHTML(ogTag['og:url'])}">
+                <p><strong>${escapeHTML(ogTag['og:title'])}</strong></p>
+                ${ogTag['og:image'] !== '' ? `<img src="${escapeHTML(ogTag['og:image'])}" style="max-height: 200px; max-width: 270px;"/>` : ''}
             </a>
-            ${ogTag['og:type'] !== undefined ? `<p><strong>Type:</strong> ${ogTag['og:type']}</p>` : ''}
-            ${ogTag['og:site_name'] !== undefined ? `<p><strong>Site:</strong> ${ogTag['og:site_name']}</p>` : ''}
-            ${ogTag['og:description'] !== '' ? `<p>${ogTag['og:description']}</p>` : ''}
+            ${ogTag['og:type'] !== undefined ? `<p><strong>Type:</strong> ${escapeHTML(ogTag['og:type'])}</p>` : ''}
+            ${ogTag['og:site_name'] !== undefined ? `<p><strong>Site:</strong> ${escapeHTML(ogTag['og:site_name'])}</p>` : ''}
+            ${ogTag['og:description'] !== '' ? `<p>${escapeHTML(ogTag['og:description'])}</p>` : ''}
         </div>`
         ;
 }

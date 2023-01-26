@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 app.use('/api/v1', apiv1);
 app.use('/api/v2', apiv2);
 
-app.listen(8081,() => {
+app.listen(3001, 'localhost',() => {
     console.log('Server is running on port 8081');
 });
 
