@@ -1,9 +1,6 @@
 FROM debian:bullseye as builder
 
-ENV PORT=8081
-EXPOSE 8081
-
-ARG NODE_VERSION=19.4.0
+ARG NODE_VERSION=19.6.0
 
 RUN apt-get update; apt install -y curl python-is-python3 pkg-config build-essential
 RUN curl https://get.volta.sh | bash

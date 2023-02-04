@@ -12,7 +12,7 @@ const appSettings = {
         clientSecret: 'QH18Q~5NAD~hpY8G-hxQ0lnRQ4HwqGREx5~_hdgd'
     },
     authRoutes: {
-        redirect: 'http://441.freymond.dev/redirect',
+        redirect: 'https://441.freymond.dev/redirect',
         error: '/error',
         unauthorized: '/unauthorized'
     }
@@ -72,8 +72,8 @@ app.get('/unauthorized', (req, res) => {
     res.status(401).send("Error: Unauthorized");
 });
 
-app.listen(3001, 'localhost', () => {
-    console.log('Server is running on port 3001');
+app.listen(8081, "0.0.0.0", () => {
+    console.log('Server is running on port 8080');
 });
 
 export default app;
