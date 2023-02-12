@@ -11,8 +11,17 @@ const postSchema = new mongoose.Schema({
     description: String,
     created_date: Date,
     username: String,
+    likes: [String],
+});
+
+const commentSchema = new mongoose.Schema({
+    username: String,
+    comment: String,
+    post: { type: mongoose.Schema.Types.ObjectId, ref: 'post' },
+    created_date: Date,
 });
 
 models.post = mongoose.model('post', postSchema);
+models.comment = mongoose.model('comment', commentSchema);
 
 export default models;

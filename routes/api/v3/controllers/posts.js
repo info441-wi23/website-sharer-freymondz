@@ -4,6 +4,18 @@ const router = express.Router();
 
 import getURLPreview from '../utils/urlPreviews.js';
 
+router.post('/like', (req, res) => {
+
+});
+
+router.post('/unlike', (req, res) => {
+
+});
+
+router.delete('/', (req, res) => {
+    
+});
+
 router.post('/', (req, res) => {
     if (!req.session.isAuthenticated) {
         res.status(401)
@@ -26,6 +38,7 @@ router.post('/', (req, res) => {
             .json({ error });
     }
 });
+
 
 router.get('/', async (req, res) => {
     try {
