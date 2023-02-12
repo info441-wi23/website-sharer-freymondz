@@ -19,13 +19,13 @@
   <h1>Website Sharer</h1>
   
   <h2>Info for user: <span id="username-span"></span></h2>
-  <div id="user_info_div">
-    TODO: For A7, show user info here (loadUserInfo function in userInfo.js)
+  <div id="user_info_div" onload="loadUserInfo()">
+    No User Information Found
   </div>
   <br>
   <div id="user_info_new_div" class="d-none">
     <h3>Update User Info:</h3>
-    TODO: For A7, add input fields here here (saveUserInfo function in userInfo.js)
+    <input type="text" id="userInfo"/>
     <br>
     <button onclick="saveUserInfo()">Save User Info</button>
   </div>

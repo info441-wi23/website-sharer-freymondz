@@ -21,7 +21,13 @@ const commentSchema = new mongoose.Schema({
     created_date: Date,
 });
 
+const userSchema = new mongoose.Schema({
+    username: String,
+    website_url: String,
+});
+
 models.post = mongoose.model('post', postSchema);
 models.comment = mongoose.model('comment', commentSchema);
+models.user = mongoose.model('user', userSchema);
 
 export default models;
